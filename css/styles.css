@@ -1,0 +1,62 @@
+/*
+CSS Name: Woman’s Day
+Author: Anndriu U.
+Description: Reconstruction of a magazine design using HTML and CSS.
+Version: 1.0
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define the variable */
+:root {
+    --font-type: "Merriweather", serif;
+    --font-weight: 300;
+    --font-style: normal;
+}
+  
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.4;
+    hyphens: auto;
+    background-color: rgb(245, 245, 245);
+}
+
+.grid-container {
+    width: 95%;
+    margin: 0px auto 0px auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas:
+        "header";
+    grid-template-columns: 1fr;
+}
+
+/* ---------
+     Header 
+   ---------*/
+header h1 {
+    grid-area: header;
+    text-align: center;
+    font-size: 14vw;
+    color: #f95e26;
+    margin-top: 0;
+    margin-bottom: -38px;
+    font-family: var(--font-type);
+    font-weight: var(--font-weight);
+    font-style: var(--font-style);
+}
+
+header p {
+    grid-area: header;
+    text-align: left;
+    font-size: 3vw;
+    color: #000000;
+    margin-left: 5vw;
+    font-family: var(--font-type);
+    font-weight: var(--font-weight);
+    font-style: var(--font-style);
+}
