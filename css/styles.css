@@ -31,27 +31,30 @@ body {
     display: grid;
     grid-gap: 5px;
     grid-template-areas:
-        "header";
-    grid-template-columns: 1fr;
+        "header header"
+        "img-womans-day live-well"
+        "img-womans-day take-time"
+        "on-our-cover health"
+        "footer footer";
+    grid-template-columns: 1fr 1.2fr;
 }
 
 /* ---------
      Header 
    ---------*/
 header h1 {
-    grid-area: header;
     text-align: center;
     font-size: 14vw;
     color: #f95e26;
     margin-top: 0;
     margin-bottom: -38px;
+    text-transform: lowercase;
     font-family: var(--font-type);
     font-weight: var(--font-weight);
     font-style: var(--font-style);
 }
 
 header p {
-    grid-area: header;
     text-align: left;
     font-size: 3vw;
     color: #000000;
@@ -59,4 +62,54 @@ header p {
     font-family: var(--font-type);
     font-weight: var(--font-weight);
     font-style: var(--font-style);
+}
+
+
+section {
+    padding: 50px;
+}
+
+
+aside img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.live-well {
+    grid-area: live-well;
+}
+
+.take-time {
+    grid-area: take-time;
+}
+
+.health {
+    grid-area: health;
+}
+
+.img-womans-day {
+    grid-area: img-womans-day;
+}
+
+.on-our-cover {
+    grid-area: on-our-cover;
+}
+
+/* ---------
+     Footer 
+   ---------*/
+footer {
+    grid-area: footer;
+    text-align: right;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+footer em {
+    color: #f95e26;
+}
+
+footer strong {
+    padding-left: 40px;
 }
