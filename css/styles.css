@@ -15,7 +15,7 @@ Version: 1.0
     --font-weight: 300;
     --font-style: normal;
 }
-  
+
 body {
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
@@ -25,15 +25,30 @@ body {
     background-color: rgb(245, 245, 245);
 }
 
+header,
+section,
+aside,
+footer {
+    background-color: white;
+}
+
+.header { grid-area: header; }
+.live-well { grid-area: live-well; }
+.take-time { grid-area: take-time; }
+.health { grid-area: health; }
+.img-womans-day { grid-area: img-womans-day; }
+.on-our-cover { grid-area: on-our-cover; }
+.footer { grid-area: footer; }
+
 .grid-container {
-    width: 95%;
+    width: 85%;
     margin: 0px auto 0px auto;
     display: grid;
-    grid-gap: 5px;
     grid-template-areas:
         "header header"
         "img-womans-day live-well"
         "img-womans-day take-time"
+        "img-womans-day health"
         "on-our-cover health"
         "footer footer";
     grid-template-columns: 1fr 1.2fr;
@@ -44,7 +59,7 @@ body {
    ---------*/
 header h1 {
     text-align: center;
-    font-size: 14vw;
+    font-size: 12vw;
     color: #f95e26;
     margin-top: 0;
     margin-bottom: -38px;
@@ -56,54 +71,72 @@ header h1 {
 
 header p {
     text-align: left;
-    font-size: 3vw;
+    font-size: 2.5vw;
     color: #000000;
-    margin-left: 5vw;
+    margin-left: 6vw;
+    margin-bottom: 4vw;
     font-family: var(--font-type);
     font-weight: var(--font-weight);
     font-style: var(--font-style);
 }
 
-
+/* ----------
+    Sections 
+   ----------*/
 section {
-    padding: 50px;
+    padding: 0px 50px 20px 50px;
 }
 
+section h2 {
+    font-size: 4em;
+    margin-left: -50px;
+    text-transform: lowercase;
+    font-family: var(--font-type);
+    font-weight: var(--font-weight);
+    font-style: var(--font-style);
+}
 
+section h3 {
+    text-transform: uppercase;
+    font-size: 1.4em;
+}
+
+section p {
+    font-size: 1.3em;
+}
+
+section h3,
+section p {
+    display: inline;
+} 
+
+/* ----------------
+     Color Section  
+   ----------------*/
+.live-well h3 {
+    color: #699f27;
+}
+
+.live-well {
+    border-top: 20px solid #699f27;
+}
+
+/* ---------
+     Image 
+   ---------*/
 aside img {
     max-width: 100%;
     height: auto;
-}
-
-
-.live-well {
-    grid-area: live-well;
-}
-
-.take-time {
-    grid-area: take-time;
-}
-
-.health {
-    grid-area: health;
-}
-
-.img-womans-day {
-    grid-area: img-womans-day;
-}
-
-.on-our-cover {
-    grid-area: on-our-cover;
 }
 
 /* ---------
      Footer 
    ---------*/
 footer {
-    grid-area: footer;
     text-align: right;
     font-size: 2em;
     text-transform: uppercase;
+    padding: 50px 50px 50px 30px;
 }
 
 footer em {
