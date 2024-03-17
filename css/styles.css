@@ -5,18 +5,21 @@ Description: Reconstruction of a magazine design using HTML and CSS.
 Version: 1.0
 */
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/* ---------------------
-    Define the variable 
-   ---------------------*/
+/* -----------
+    Variables 
+   -----------*/
 :root {
     --font-type: "Merriweather", serif;
     --font-weight: 300;
     --font-style: normal;
+    --font-type-issue: "Lora", serif;
+    --font-weight-issue: 400;
+    --font-style-issue: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -53,12 +56,28 @@ body {
 /* ---------
      Header 
    ---------*/
+/* This CSS is quite interesting, because it 
+   swaps the Title and Paragraph lines. */
+.header h1 { grid-area: title; }
+.header p { grid-area: paragraph; }
+
+.header {
+    display: grid;
+    grid-template-areas: 
+        "paragraph"
+        "title";
+    grid-template-columns: auto;
+}
+
+/* ---------
+     Header 
+   ---------*/
 header h1 {
     text-align: center;
     font-size: 13vw;
     color: #f95e26;
     margin-top: 0;
-    margin-bottom: -38px;
+    margin-bottom: 40px;
     text-transform: lowercase;
     font-family: var(--font-type);
     font-weight: var(--font-weight);
@@ -67,13 +86,14 @@ header h1 {
 
 header p {
     text-align: left;
-    font-size: 2.5vw;
+    font-size: 2vw;
     color: #000000;
-    margin-left: 6vw;
-    margin-bottom: 4vw;
-    font-family: var(--font-type);
-    font-weight: var(--font-weight);
-    font-style: var(--font-style);
+    margin-left: 3vw;
+    margin-top: 3vw;
+    text-transform: uppercase;
+    font-family: var(--font-type-issue);
+    font-weight: var(--font-weight-issue);
+    font-style: var(--font-style-issue);
 }
 
 /* ----------
@@ -85,7 +105,7 @@ section {
 }
 
 section h2 {
-    font-size: 4em;
+    font-size: 4vw;
     margin-left: -50px;
     text-transform: lowercase;
     font-family: var(--font-type);
@@ -95,11 +115,11 @@ section h2 {
 
 section h3 {
     text-transform: uppercase;
-    font-size: 1.4em;
+    font-size: 1.4vw;
 }
 
 section p {
-    font-size: 1.3em;
+    font-size: 1.3vw;
 }
 
 section h3,
@@ -118,28 +138,28 @@ section strong {
 /* ----------------
      Color section  
    ----------------*/
-.live-well h3 {
-    color: #699f27;
-}
-
 .live-well {
     border-top: 20px solid #699f27;
 }
 
-.take-time h3 {
-    color: #e82478;
+.live-well h3 {
+    color: #699f27;
 }
 
 .take-time {
     border-top: 20px solid #e82478;
 }
 
-.health h3 {
-    color: #159da9;
+.take-time h3 {
+    color: #e82478;
 }
 
 .health {
     border-top: 20px solid #159da9;
+}
+
+.health h3 {
+    color: #159da9;
 }
 
 /* ---------
@@ -158,44 +178,47 @@ figcaption {
     color:white;
     position: absolute;
     transform: translate(0%, -110%);
-    padding: 10px 10px 10px 80px;
+    padding: 10px 10px 10px 110px;
+    font-family: var(--font-type-issue);
+    font-weight: var(--font-weight-issue);
+    font-style: var(--font-style-issue);
 }
 
 figcaption em {
-    font-size: 9em;
+    font-size: 9vw;
 }
 
 figcaption span {
     display: block;
-    font-size: 1em;
+    font-size: 1.2vw;
 }
 
 /* ---------
      Aside 
    ---------*/
+.card-content {
+    padding: 20px; 
+    border: 2px solid #f95e26; 
+    border-radius: 5px;
+    box-shadow: 12px 12px 5px rgba(0, 0, 0, 0.1);
+}
+
 .on-our-cover {
     font-weight: bold;
     padding: 0px 50px 0px 50px;
     line-height: 1.9;
 }
 
-.card-content {
-    padding: 20px; 
-    border: 2px solid #f95e26; 
-    border-radius: 5px;
-    overflow: hidden; 
-    box-shadow: 12px 12px 5px rgba(0, 0, 0, 0.1);
-}
-
 .on-our-cover h2 {
-    font-size: 3em;
+    font-size: 3vw;
     font-family: var(--font-type);
     font-weight: var(--font-weight);
     font-style: var(--font-style);
+    text-transform: lowercase;
 }
 
 .on-our-cover em {
-    font-size: 1.2em;
+    font-size: 1.2vw;
     text-transform: uppercase;
 }
 
@@ -208,7 +231,7 @@ figcaption span {
    ---------*/
 footer {
     text-align: right;
-    font-size: 2em;
+    font-size: 1.6vw;
     text-transform: uppercase;
     padding: 50px 50px 50px 30px;
 }
@@ -219,4 +242,27 @@ footer em {
 
 footer strong {
     padding-left: 40px;
+}
+
+@media (max-width: 1200px) {
+    .grid-container {
+        width: 100%;
+        display: grid;
+        grid-template-areas:
+            "header"
+            "img-womans-day"
+            "live-well"
+            "take-time"
+            "health"
+            "on-our-cover"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+    .img-womans-day {
+        display: none;
+    }
+    section,
+    aside {
+        margin: 0 auto;
+    }
 }
