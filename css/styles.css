@@ -2,6 +2,10 @@
 CSS Name: Woman’s Day
 Author: Anndriu U.
 Description: Reconstruction of a magazine design using HTML and CSS.
+             For this exercise, I use grid to organize all sections of the page. 
+             Unlike my previous exercises, I added styles directly to the tags or classes. 
+             I also included a few classes in the HTML to identify each section and ventured 
+             into using variables for font types and font sizes.
 Version: 1.0
 */
 
@@ -26,6 +30,9 @@ Version: 1.0
     --font-size-9: 1.2vw;
 }
 
+/* --------
+    Global 
+   --------*/
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +47,9 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+/* --------
+     Frame 
+   --------*/
 .header { grid-area: header; }
 .live-well { grid-area: live-well; }
 .take-time { grid-area: take-time; }
@@ -258,7 +268,13 @@ footer strong {
     padding-left: 40px;
 }
 
+/* --------------
+     Media Query 
+   --------------*/
 @media (max-width: 1200px) {
+    /* -----------
+        Variables 
+       -----------*/
     :root {
         --font-size-1: 14vw;
         --font-size-2: 10vw;
@@ -270,7 +286,9 @@ footer strong {
         --font-size-8: 3vw;
         --font-size-9: 2.5vw;
     }
-
+    /* -------
+        Frame 
+       -------*/
     .grid-container {
         width: 100%;
         display: grid;
