@@ -15,6 +15,15 @@ Version: 1.0
     --font-type-issue: "Lora", serif;
     --font-weight-issue: 400;
     --font-style-issue: normal;
+    --font-size-1: 13vw;
+    --font-size-2: 9vw;
+    --font-size-4: 4vw;
+    --font-size-5: 3vw;
+    --font-size-3: 2vw;
+    --font-size-6: 1.6vw;
+    --font-size-7: 1.4vw;
+    --font-size-8: 1.3vw;
+    --font-size-9: 1.2vw;
 }
 
 * {
@@ -74,7 +83,7 @@ body {
    ---------*/
 header h1 {
     text-align: center;
-    font-size: 13vw;
+    font-size: var(--font-size-1);
     color: #f95e26;
     margin-top: 0;
     margin-bottom: 40px;
@@ -86,7 +95,7 @@ header h1 {
 
 header p {
     text-align: left;
-    font-size: 2vw;
+    font-size: var(--font-size-3);
     color: #000000;
     margin-left: 3vw;
     margin-top: 3vw;
@@ -105,7 +114,7 @@ section {
 }
 
 section h2 {
-    font-size: 4vw;
+    font-size: var(--font-size-4);
     margin-left: -50px;
     text-transform: lowercase;
     font-family: var(--font-type);
@@ -115,11 +124,11 @@ section h2 {
 
 section h3 {
     text-transform: uppercase;
-    font-size: 1.4vw;
+    font-size: var(--font-size-7);
 }
 
 section p {
-    font-size: 1.3vw;
+    font-size: var(--font-size-8);
 }
 
 section h3,
@@ -185,12 +194,12 @@ figcaption {
 }
 
 figcaption em {
-    font-size: 9vw;
+    font-size: var(--font-size-2);
 }
 
 figcaption span {
     display: block;
-    font-size: 1.2vw;
+    font-size: var(--font-size-9);
 }
 
 /* ---------
@@ -210,7 +219,7 @@ figcaption span {
 }
 
 .on-our-cover h2 {
-    font-size: 3vw;
+    font-size: var(--font-size-5);
     font-family: var(--font-type);
     font-weight: var(--font-weight);
     font-style: var(--font-style);
@@ -218,12 +227,17 @@ figcaption span {
 }
 
 .on-our-cover em {
-    font-size: 1.2vw;
+    font-size: var(--font-size-9);
     text-transform: uppercase;
 }
 
+.on-our-cover p {
+    font-size: var(--font-size-9);
+}
+
 .on-our-cover ol {
-    padding-left: 44px;
+    font-size: var(--font-size-9);
+    padding-left: 80px;
 }
 
 /* ---------
@@ -231,7 +245,7 @@ figcaption span {
    ---------*/
 footer {
     text-align: right;
-    font-size: 1.6vw;
+    font-size: var(--font-size-6);
     text-transform: uppercase;
     padding: 50px 50px 50px 30px;
 }
@@ -245,6 +259,18 @@ footer strong {
 }
 
 @media (max-width: 1200px) {
+    :root {
+        --font-size-1: 14vw;
+        --font-size-2: 10vw;
+        --font-size-4: 5vw;
+        --font-size-5: 4vw;
+        --font-size-3: 3vw;
+        --font-size-6: 3vw;
+        --font-size-7: 3vw;
+        --font-size-8: 3vw;
+        --font-size-9: 2.5vw;
+    }
+
     .grid-container {
         width: 100%;
         display: grid;
@@ -258,9 +284,11 @@ footer strong {
             "footer";
         grid-template-columns: 1fr;
     }
+
     .img-womans-day {
         display: none;
     }
+
     section,
     aside {
         margin: 0 auto;
